@@ -1,0 +1,12 @@
+app:
+  image: indiehosters/science-blogger
+web:
+  image: nginx
+  links:
+    - app
+  ports:
+    - 3000:80
+  volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  environment:
+    - HOST
